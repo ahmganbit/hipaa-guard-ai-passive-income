@@ -21,3 +21,6 @@ services:
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/build
     autoDeploy: true
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://hipaa-guard-ai-backend-15u4.onrender.com
