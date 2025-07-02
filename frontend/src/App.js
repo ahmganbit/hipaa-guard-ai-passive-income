@@ -749,7 +749,7 @@ Example data that triggers violations:
                 </div>
               </div>
             </div>
-          </>
+          </div>
         )}
 
         {/* Pricing Tab */}
