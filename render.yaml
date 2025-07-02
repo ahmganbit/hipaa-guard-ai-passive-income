@@ -15,8 +15,9 @@ services:
         value: 5000
 
   # Frontend Static Site
-  - type: static
+  - type: web
     name: hipaa-guard-ai-frontend
+    env: static
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/build
     autoDeploy: true
