@@ -22,9 +22,8 @@ services:
     staticPublishPath: frontend/build
     autoDeploy: true
 
-  # Database (PostgreSQL)
-  - type: pserv
-    name: hipaa-guard-ai-database
+databases:
+  - name: hipaa-guard-ai-database
     databaseName: hipaa_guard_ai
-    databaseUser: hipaa_user
+    user: hipaa_user
     plan: free
