@@ -694,6 +694,7 @@ Example data that triggers violations:
                     </div>
                   </div>
                 )}
+                </div>
               </div>
             </div>
 
