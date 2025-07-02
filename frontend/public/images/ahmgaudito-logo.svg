@@ -1,0 +1,49 @@
+<svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for the head -->
+  <circle cx="60" cy="60" r="45" fill="none" stroke="#3B82F6" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="30" cy="30" r="4" fill="#3B82F6"/>
+  <circle cx="50" cy="20" r="3" fill="#60A5FA"/>
+  <circle cx="70" cy="25" r="3" fill="#93C5FD"/>
+  <circle cx="90" cy="35" r="4" fill="#3B82F6"/>
+  <circle cx="25" cy="50" r="3" fill="#60A5FA"/>
+  <circle cx="45" cy="45" r="4" fill="#3B82F6"/>
+  <circle cx="65" cy="40" r="3" fill="#93C5FD"/>
+  <circle cx="85" cy="50" r="3" fill="#60A5FA"/>
+  <circle cx="35" cy="70" r="3" fill="#93C5FD"/>
+  <circle cx="55" cy="75" r="4" fill="#3B82F6"/>
+  <circle cx="75" cy="70" r="3" fill="#60A5FA"/>
+  <circle cx="95" cy="80" r="3" fill="#93C5FD"/>
+  <circle cx="40" cy="90" r="3" fill="#60A5FA"/>
+  <circle cx="60" cy="95" r="4" fill="#3B82F6"/>
+  <circle cx="80" cy="90" r="3" fill="#93C5FD"/>
+  
+  <!-- Neural network connections -->
+  <line x1="30" y1="30" x2="45" y2="45" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
+  <line x1="50" y1="20" x2="65" y2="40" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
+  <line x1="70" y1="25" x2="85" y2="50" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
+  <line x1="45" y1="45" x2="55" y2="75" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
+  <line x1="65" y1="40" x2="75" y2="70" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
+  <line x1="85" y1="50" x2="95" y2="80" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
+  <line x1="25" y1="50" x2="35" y2="70" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
+  <line x1="55" y1="75" x2="60" y2="95" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
+  <line x1="75" y1="70" x2="80" y2="90" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Head profile outline -->
+  <path d="M 75 25 Q 85 30 90 45 Q 88 65 80 75 Q 70 85 55 85 Q 45 80 40 70 Q 38 60 42 50 Q 45 40 55 35 Q 65 30 75 25" 
+        fill="none" stroke="#3B82F6" stroke-width="2.5"/>
+  
+  <!-- Eye -->
+  <circle cx="65" cy="50" r="2" fill="#3B82F6"/>
+  
+  <!-- AHMGAUDITO Text -->
+  <text x="130" y="45" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#EAB308">
+    AHMGAUDITO
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="130" y="70" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#10B981" letter-spacing="2px">
+    HEALTHCARE-AI AUDITOR
+  </text>
+</svg>

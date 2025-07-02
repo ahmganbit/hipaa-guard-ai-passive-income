@@ -265,52 +265,60 @@ const HIPAAComplianceChecker = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-purple-50 via-brand-purple-100 to-brand-purple-200">
+    <div className="min-h-screen bg-gradient-to-br from-brand-purple-950 via-brand-purple-900 to-brand-purple-800">
       {/* Header with Navigation */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="max-w-6xl mx-auto px-4 py-3">
+      <div className="glass-dark border-b border-brand-purple-700/30">
+        <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center">
-                <img src="/images/logo.png" alt="HIPAA Guard AI Logo" className="h-10 mr-2" />
-                <span className="text-xl font-bold text-brand-purple-900">HIPAA Guard AI</span>
+            <div className="flex items-center space-x-6">
+              <div className="logo-container">
+                <img src="/images/ahmgaudito-logo.svg" alt="AHMGAUDITO Healthcare AI Auditor" className="logo-image" />
+                <div className="flex flex-col">
+                  <span className="logo-text">AHMGAUDITO</span>
+                  <span className="text-xs text-brand-teal-400 font-medium tracking-wider">HEALTHCARE-AI AUDITOR</span>
+                </div>
               </div>
-              <div className="hidden md:flex items-center space-x-4 ml-8">
-                <button 
+              <div className="hidden md:flex items-center space-x-2 ml-8">
+                <button
                   onClick={() => setActiveTab('scanner')}
-                  className={`px-3 py-2 rounded-lg ${activeTab === 'scanner' ? 'bg-brand-purple-100 text-brand-purple-800' : 'text-gray-600 hover:bg-gray-100'}`}
+                  className={`nav-link ${activeTab === 'scanner' ? 'active' : ''}`}
                 >
-                  Scanner
+                  <Shield className="h-4 w-4 inline mr-2" />
+                  AI Scanner
                 </button>
-                <button 
+                <button
                   onClick={() => setActiveTab('pricing')}
-                  className={`px-3 py-2 rounded-lg ${activeTab === 'pricing' ? 'bg-brand-purple-100 text-brand-purple-800' : 'text-gray-600 hover:bg-gray-100'}`}
+                  className={`nav-link ${activeTab === 'pricing' ? 'active' : ''}`}
                 >
+                  <DollarSign className="h-4 w-4 inline mr-2" />
                   Pricing
                 </button>
-                <button 
+                <button
                   onClick={() => setActiveTab('leads')}
-                  className={`px-3 py-2 rounded-lg ${activeTab === 'leads' ? 'bg-brand-purple-100 text-brand-purple-800' : 'text-gray-600 hover:bg-gray-100'}`}
+                  className={`nav-link ${activeTab === 'leads' ? 'active' : ''}`}
                 >
-                  Lead Dashboard
+                  <BarChart3 className="h-4 w-4 inline mr-2" />
+                  Analytics
                 </button>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center space-x-4 text-sm text-gray-600">
-                <div className="flex items-center">
-                  <Users className="h-4 w-4 mr-1" />
-                  <span>2,347+ scans completed</span>
+              <div className="hidden md:flex items-center space-x-4 text-sm text-white/80">
+                <div className="flex items-center glass rounded-lg px-3 py-2">
+                  <Users className="h-4 w-4 mr-2 text-brand-teal-400" />
+                  <span>2,347+ scans</span>
                 </div>
-                <div className="flex items-center">
-                  <TrendingUp className="h-4 w-4 mr-1" />
-                  <span>$2.3M+ in fines prevented</span>
+                <div className="flex items-center glass rounded-lg px-3 py-2">
+                  <TrendingUp className="h-4 w-4 mr-2 text-brand-gold-400" />
+                  <span>$2.3M+ saved</span>
                 </div>
               </div>
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
+              <div className="flex items-center space-x-2">
+                <div className="flex text-brand-gold-400">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
+                </div>
+                <span className="text-sm text-white/80">4.9/5</span>
               </div>
-              <span className="text-sm text-gray-600">4.9/5 (127 reviews)</span>
             </div>
           </div>
         </div>
@@ -321,38 +329,39 @@ const HIPAAComplianceChecker = () => {
         {activeTab === 'scanner' && (
           <>
             {/* Hero Section */}
-            <div className="text-center mb-8 py-8">
-              <h1 className="text-5xl font-bold text-brand-purple-900 mb-4">
-                Stop HIPAA Violations Before They Cost You <span className="text-red-600">$50,000+</span>
+            <div className="text-center mb-12 py-16 animate-fade-in">
+              <h1 className="text-6xl font-display font-bold mb-6">
+                Stop HIPAA Violations Before They Cost You <span className="gradient-text">$50,000+</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
-                AI-powered scanner detects PHI violations in your training data instantly. 
-                Get compliant in minutes, not months.
+              <p className="text-xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+                AI-powered scanner detects PHI violations in your training data instantly.
+                Get compliant in minutes, not months with AHMGAUDITO's advanced healthcare AI auditor.
               </p>
-              
+
               {/* Urgency Banner */}
-              <div className="bg-red-100 border-l-4 border-red-500 p-4 mb-6 inline-block rounded">
+              <div className="glass border-l-4 border-red-400 p-6 mb-8 inline-block rounded-xl animate-pulse-slow">
                 <div className="flex items-center">
-                  <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
-                  <p className="text-red-800 font-semibold">
+                  <AlertTriangle className="h-6 w-6 text-red-400 mr-3" />
+                  <p className="text-white font-semibold text-lg">
                     🚨 OCR investigations increased 400% this year • Average fine: $2.2M
                   </p>
                 </div>
               </div>
 
               {/* Live testimonial rotation */}
-              <div className="bg-white rounded-lg shadow-sm p-6 max-w-2xl mx-auto mb-8">
+              <div className="card-premium max-w-3xl mx-auto mb-8 animate-slide-up">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="flex text-yellow-400 mr-3">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
+                  <div className="flex text-brand-gold-400 mr-3">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}
                   </div>
+                  <span className="text-white/80 font-medium">Trusted by 2,347+ Healthcare Organizations</span>
                 </div>
-                <blockquote className="text-lg text-gray-700 mb-4">
+                <blockquote className="text-xl text-white/90 mb-6 italic">
                   "{testimonials[testimonialIndex].text}"
                 </blockquote>
                 <div className="text-center">
-                  <p className="font-semibold">{testimonials[testimonialIndex].name}</p>
-                  <p className="text-sm text-gray-600">{testimonials[testimonialIndex].role}, {testimonials[testimonialIndex].company}</p>
+                  <p className="font-semibold text-brand-gold-400 text-lg">{testimonials[testimonialIndex].name}</p>
+                  <p className="text-white/70">{testimonials[testimonialIndex].role}, {testimonials[testimonialIndex].company}</p>
                 </div>
               </div>
             </div>
