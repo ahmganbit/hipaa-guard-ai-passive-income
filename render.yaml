@@ -18,8 +18,9 @@ services:
   - type: web
     name: hipaa-guard-ai-frontend
     env: static
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/build
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    rootDir: frontend
     autoDeploy: true
     envVars:
       - key: REACT_APP_API_URL
