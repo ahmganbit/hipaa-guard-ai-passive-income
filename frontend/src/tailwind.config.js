@@ -47,6 +47,12 @@ module.exports = {
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
         'display': ['Poppins', 'system-ui', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'monospace'],
+      },
+      backgroundImage: {
+        'web3-gradient': 'radial-gradient(ellipse at top, #1a0b2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a0b2e 100%)',
+        'cyber-grid': 'linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)',
+        'hologram': 'linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.1) 50%, transparent 70%)',
       },
       animation: {
         'gradient': 'gradient 8s ease infinite',
