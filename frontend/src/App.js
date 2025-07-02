@@ -699,32 +699,53 @@ Example data that triggers violations:
             </div>
 
             {/* Features Section */}
-            <div className="mt-16 text-center">
-              <h2 className="text-3xl font-bold text-brand-purple-900 mb-12">How HIPAA Guard AI Protects You</h2>
-              
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="bg-brand-purple-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <Zap className="h-8 w-8 text-brand-purple-600" />
+            <div className="mt-24 text-center relative">
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-10 left-1/4 w-32 h-32 bg-gradient-to-r from-brand-purple-500/10 to-brand-gold-500/10 rounded-full blur-3xl animate-3d-float"></div>
+                <div className="absolute bottom-10 right-1/4 w-24 h-24 bg-gradient-to-r from-brand-teal-500/10 to-brand-purple-500/10 rounded-full blur-2xl animate-3d-float" style={{animationDelay: '3s'}}></div>
+              </div>
+
+              <div className="relative z-10">
+                <h2 className="text-5xl font-display font-bold text-white mb-4">
+                  How <span className="bg-gradient-to-r from-brand-gold-400 to-brand-teal-400 bg-clip-text text-transparent">AHMGAUDITO</span> Protects You
+                </h2>
+                <p className="text-xl text-white/80 mb-16 max-w-3xl mx-auto">
+                  Advanced AI technology meets enterprise-grade security to deliver unmatched HIPAA compliance protection.
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                  <div className="glass-3d p-8 rounded-3xl group hover:scale-105 transition-all duration-500">
+                    <div className="relative">
+                      <div className="w-20 h-20 bg-gradient-to-r from-brand-purple-500 to-brand-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 animate-3d-pulse group-hover:animate-3d-rotate">
+                        <Zap className="h-10 w-10 text-white" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-brand-purple-500/20 to-brand-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-white mb-4">Instant Detection</h3>
+                    <p className="text-white/80 leading-relaxed">Scans your data in seconds using advanced AI algorithms, identifying PHI patterns that could trigger costly HIPAA violations.</p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Instant Detection</h3>
-                  <p className="text-gray-600">Scans your data in seconds, identifying PHI patterns that could trigger HIPAA violations.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="bg-brand-purple-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <Shield className="h-8 w-8 text-brand-purple-600" />
+
+                  <div className="glass-3d p-8 rounded-3xl group hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
+                    <div className="relative">
+                      <div className="w-20 h-20 bg-gradient-to-r from-brand-teal-500 to-brand-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 animate-3d-pulse group-hover:animate-3d-rotate">
+                        <Shield className="h-10 w-10 text-white" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-brand-teal-500/20 to-brand-teal-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-white mb-4">Compliance Assurance</h3>
+                    <p className="text-white/80 leading-relaxed">Get detailed compliance scores and risk assessments based on real OCR enforcement patterns and industry best practices.</p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Compliance Assurance</h3>
-                  <p className="text-gray-600">Get a detailed compliance score and risk assessment based on OCR enforcement patterns.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="bg-brand-purple-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <ArrowRight className="h-8 w-8 text-brand-purple-600" />
+
+                  <div className="glass-3d p-8 rounded-3xl group hover:scale-105 transition-all duration-500" style={{animationDelay: '0.4s'}}>
+                    <div className="relative">
+                      <div className="w-20 h-20 bg-gradient-to-r from-brand-gold-500 to-brand-gold-600 rounded-2xl flex items-center justify-center mx-auto mb-6 animate-3d-pulse group-hover:animate-3d-rotate">
+                        <ArrowRight className="h-10 w-10 text-brand-purple-900" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-brand-gold-500/20 to-brand-gold-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-white mb-4">Actionable Fixes</h3>
+                    <p className="text-white/80 leading-relaxed">Receive step-by-step remediation instructions with automated fixes to ensure complete HIPAA compliance.</p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Actionable Fixes</h3>
-                  <p className="text-gray-600">Receive step-by-step remediation instructions to fix violations and ensure compliance.</p>
                 </div>
               </div>
             </div>
