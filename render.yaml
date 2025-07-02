@@ -21,9 +21,3 @@ services:
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/build
     autoDeploy: true
-
-databases:
-  - name: hipaa-guard-ai-database
-    databaseName: hipaa_guard_ai
-    user: hipaa_user
-    plan: free
