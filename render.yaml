@@ -1,12 +1,49 @@
+# Render.com Deployment Configuration
+# This file enables automatic deployment and scaling
+
 services:
+  # Backend API Service
   - type: web
     name: hipaa-guard-ai-backend
     env: node
+    plan: starter
+    region: oregon
     buildCommand: cd backend && npm install
     startCommand: cd backend && npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
     envVars:
-      - key: PORT
-        value: 5000
       - key: NODE_ENV
         value: production
-    healthCheckPath: /api/health 
+      - key: PORT
+        value: 5000
+      - key: FLUTTERWAVE_SECRET_KEY
+        sync: false
+      - key: NOWPAYMENTS_API_KEY
+        sync: false
+
+  # Frontend Static Site
+  - type: web
+    name: hipaa-guard-ai-frontend
+    env: static
+    plan: starter
+    region: oregon
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  # Database (PostgreSQL)
+  - type: pserv
+    name: hipaa-guard-ai-database
+    env: postgresql
+    plan: free
+    region: oregon
+
+  # Redis Cache (for session management)
+  - type: redis
+    name: hipaa-guard-ai-cache
+    plan: free
+    region: oregon

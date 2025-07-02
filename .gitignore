@@ -1,0 +1,26 @@
+# .gitignore for HIPAA Guard AI Render deployment
+
+# Frontend
+node_modules/
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+/frontend/build
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Backend
+node_modules/
+/backend/.env
+/backend/npm-debug.log*
+/backend/yarn-debug.log*
+/backend/yarn-error.log*
+
+# General
+.DS_Store
+.idea
+.vscode
+*.log
