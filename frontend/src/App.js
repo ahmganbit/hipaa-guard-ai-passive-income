@@ -405,6 +405,7 @@ const HIPAAComplianceChecker = () => {
               </p>
             </section>
 
+            {/* Scanner Interface */}
             <section className="grid lg:grid-cols-2 gap-8">
               {/* Input Section */}
               <div className="card-elevated p-6">
