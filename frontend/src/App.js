@@ -649,8 +649,6 @@ Example data that triggers violations:
               </div>
             </section>
 
-            </section>
-
             {/* Features Section */}
             <section className="py-16 bg-white">
               <div className="text-center mb-12">
