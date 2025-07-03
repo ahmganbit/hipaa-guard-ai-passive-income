@@ -10,125 +10,68 @@
   }
 
   body {
-    @apply text-white font-sans min-h-screen;
-    background: radial-gradient(ellipse at top, #1a0b2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a0b2e 100%);
-    background-attachment: fixed;
-    overflow-x: hidden;
+    @apply bg-gray-50 text-gray-900 font-sans min-h-screen;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
     scroll-behavior: smooth;
   }
-
-  /* 3D Perspective Container */
-  .perspective-container {
-    perspective: 1000px;
-    transform-style: preserve-3d;
-  }
 }
 
 @layer components {
-  /* 3D Glass morphism with Web3 effects */
-  .glass-3d {
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow:
-      0 8px 32px rgba(0,0,0,0.3),
-      inset 0 1px 0 rgba(255,255,255,0.2),
-      0 0 0 1px rgba(255,255,255,0.05);
-    transform-style: preserve-3d;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Professional Card Components */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200;
+    @apply transition-all duration-200 ease-out;
   }
 
-  .glass-3d:hover {
-    transform: translateY(-8px) rotateX(5deg);
-    box-shadow:
-      0 20px 40px rgba(0,0,0,0.4),
-      inset 0 1px 0 rgba(255,255,255,0.3),
-      0 0 0 1px rgba(255,255,255,0.1);
+  .card:hover {
+    @apply shadow-lg border-gray-300;
+    transform: translateY(-2px);
   }
 
-  .glass-dark-3d {
-    background: linear-gradient(135deg, rgba(139, 69, 255, 0.15) 0%, rgba(139, 69, 255, 0.05) 100%);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(139, 69, 255, 0.3);
-    box-shadow:
-      0 12px 40px rgba(139, 69, 255, 0.2),
-      inset 0 1px 0 rgba(255,255,255,0.1),
-      0 0 20px rgba(139, 69, 255, 0.1);
-    transform-style: preserve-3d;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  .card-elevated {
+    @apply bg-white rounded-xl shadow-lg border border-gray-200;
+    @apply transition-all duration-200 ease-out;
   }
 
-  .glass-dark-3d:hover {
-    transform: translateY(-10px) rotateX(8deg) rotateY(2deg);
-    box-shadow:
-      0 25px 50px rgba(139, 69, 255, 0.3),
-      inset 0 1px 0 rgba(255,255,255,0.2),
-      0 0 30px rgba(139, 69, 255, 0.2);
+  .card-elevated:hover {
+    @apply shadow-xl;
+    transform: translateY(-4px);
   }
 
-  /* 3D Web3 Buttons */
-  .btn-3d-primary {
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
-    border: 1px solid rgba(139, 92, 246, 0.5);
-    color: white;
-    font-weight: 600;
-    padding: 16px 32px;
-    border-radius: 16px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow:
-      0 8px 25px rgba(139, 92, 246, 0.3),
-      inset 0 1px 0 rgba(255,255,255,0.2);
-    overflow: hidden;
+  /* Professional Button Components */
+  .btn-primary {
+    @apply bg-brand-purple-600 hover:bg-brand-purple-700 text-white;
+    @apply font-semibold px-6 py-3 rounded-lg;
+    @apply transition-all duration-200 ease-out;
+    @apply shadow-sm hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-purple-500 focus:ring-offset-2;
   }
 
-  .btn-3d-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
+  .btn-primary:hover {
+    transform: translateY(-1px);
   }
 
-  .btn-3d-primary:hover::before {
-    left: 100%;
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-brand-purple-600;
+    @apply font-semibold px-6 py-3 rounded-lg;
+    @apply border border-brand-purple-600 hover:border-brand-purple-700;
+    @apply transition-all duration-200 ease-out;
+    @apply shadow-sm hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-purple-500 focus:ring-offset-2;
   }
 
-  .btn-3d-primary:hover {
-    transform: translateY(-4px) rotateX(10deg);
-    box-shadow:
-      0 15px 35px rgba(139, 92, 246, 0.4),
-      inset 0 1px 0 rgba(255,255,255,0.3);
+  .btn-secondary:hover {
+    transform: translateY(-1px);
   }
 
-  .btn-3d-secondary {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
-    border: 1px solid rgba(245, 158, 11, 0.5);
-    color: #1a0b2e;
-    font-weight: 600;
-    padding: 16px 32px;
-    border-radius: 16px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow:
-      0 8px 25px rgba(245, 158, 11, 0.3),
-      inset 0 1px 0 rgba(255,255,255,0.3);
-    overflow: hidden;
-  }
-
-  .btn-3d-secondary:hover {
-    transform: translateY(-4px) rotateX(10deg);
-    box-shadow:
-      0 15px 35px rgba(245, 158, 11, 0.4),
-      inset 0 1px 0 rgba(255,255,255,0.4);
+  .btn-large {
+    @apply px-8 py-4 text-lg;
   }
 
   .btn-outline {
@@ -219,159 +162,89 @@
     @apply text-white px-3 py-1 rounded-full text-sm font-medium;
   }
 
-  /* 3D Web3 Animations */
-  .animate-3d-float {
-    animation: float3d 6s ease-in-out infinite;
+  /* Professional Input Components */
+  .input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg;
+    @apply focus:ring-2 focus:ring-brand-purple-500 focus:border-brand-purple-500;
+    @apply transition-all duration-200 ease-out;
+    @apply placeholder-gray-500;
   }
 
-  .animate-3d-rotate {
-    animation: rotate3d 20s linear infinite;
+  .input:focus {
+    @apply outline-none;
   }
 
-  .animate-3d-pulse {
-    animation: pulse3d 2s ease-in-out infinite;
+  /* Professional Badge Components */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
   }
 
-  .animate-matrix-rain {
-    animation: matrixRain 10s linear infinite;
+  .badge-success {
+    @apply bg-green-100 text-green-800;
   }
 
-  .animate-hologram {
-    animation: hologram 3s ease-in-out infinite;
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-800;
   }
 
-  /* Web3 Grid Background */
-  .web3-grid {
-    background-image:
-      linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: gridMove 20s linear infinite;
+  .badge-danger {
+    @apply bg-red-100 text-red-800;
   }
 
-  /* Neon Glow Effects */
-  .neon-purple {
-    box-shadow:
-      0 0 5px #8b5cf6,
-      0 0 10px #8b5cf6,
-      0 0 15px #8b5cf6,
-      0 0 20px #8b5cf6;
-    animation: neonPulse 2s ease-in-out infinite alternate;
+  .badge-info {
+    @apply bg-blue-100 text-blue-800;
   }
 
-  .neon-gold {
-    box-shadow:
-      0 0 5px #f59e0b,
-      0 0 10px #f59e0b,
-      0 0 15px #f59e0b,
-      0 0 20px #f59e0b;
-    animation: neonPulse 2s ease-in-out infinite alternate;
+  /* Professional Alert Components */
+  .alert {
+    @apply p-4 rounded-lg border-l-4;
   }
 
-  /* Particle System */
-  .particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
+  .alert-success {
+    @apply bg-green-50 border-green-400 text-green-800;
   }
 
-  .particle {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: #8b5cf6;
-    border-radius: 50%;
-    animation: particleFloat 15s linear infinite;
+  .alert-warning {
+    @apply bg-yellow-50 border-yellow-400 text-yellow-800;
+  }
+
+  .alert-danger {
+    @apply bg-red-50 border-red-400 text-red-800;
+  }
+
+  .alert-info {
+    @apply bg-blue-50 border-blue-400 text-blue-800;
   }
 }
 
-/* 3D Keyframes */
-@keyframes float3d {
-  0%, 100% {
-    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
-  }
-  33% {
-    transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
-  }
-  66% {
-    transform: translateY(-10px) rotateX(-3deg) rotateY(-3deg);
-  }
-}
-
-@keyframes rotate3d {
+/* Professional Animations */
+@keyframes fadeIn {
   from {
-    transform: rotateY(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotateY(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes pulse3d {
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
   0%, 100% {
-    transform: scale(1) rotateX(0deg);
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    opacity: 1;
   }
   50% {
-    transform: scale(1.05) rotateX(5deg);
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
-  }
-}
-
-@keyframes hologram {
-  0%, 100% {
     opacity: 0.8;
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    filter: hue-rotate(90deg);
-  }
-}
-
-@keyframes gridMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, 50px);
-  }
-}
-
-@keyframes neonPulse {
-  from {
-    box-shadow:
-      0 0 5px currentColor,
-      0 0 10px currentColor,
-      0 0 15px currentColor,
-      0 0 20px currentColor;
-  }
-  to {
-    box-shadow:
-      0 0 10px currentColor,
-      0 0 20px currentColor,
-      0 0 30px currentColor,
-      0 0 40px currentColor;
-  }
-}
-
-@keyframes particleFloat {
-  0% {
-    transform: translateY(100vh) translateX(0px) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100px) translateX(100px) rotate(360deg);
-    opacity: 0;
   }
 }

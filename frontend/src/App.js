@@ -265,237 +265,191 @@ const HIPAAComplianceChecker = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-web3-gradient relative overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="web3-grid fixed inset-0 opacity-30"></div>
-
-      {/* Floating Particles */}
-      <div className="particles">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 15}s`,
-              animationDuration: `${15 + Math.random() * 10}s`
-            }}
-          />
-        ))}
-      </div>
-
+    <div className="min-h-screen bg-gray-50">
       {/* Header with Navigation */}
-      <div className="glass-dark-3d border-b border-brand-purple-400/20 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex items-center justify-between">
+      <header className="bg-white shadow-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
-              <div className="flex items-center space-x-4 animate-3d-float">
-                <div className="relative">
-                  <img
-                    src="/images/ahmgaudito-logo.svg"
-                    alt="AHMGAUDITO Healthcare AI Auditor"
-                    className="h-16 w-16 animate-3d-rotate drop-shadow-2xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-purple-500 to-brand-gold-500 rounded-full blur-xl opacity-30 animate-3d-pulse"></div>
-                </div>
+              <div className="flex items-center space-x-3">
+                <img
+                  src="/images/ahmgaudito-logo.svg"
+                  alt="AHMGAUDITO Healthcare AI Auditor"
+                  className="h-10 w-10"
+                />
                 <div className="flex flex-col">
-                  <span className="text-3xl font-display font-bold bg-gradient-to-r from-brand-gold-400 via-brand-purple-400 to-brand-teal-400 bg-clip-text text-transparent animate-hologram">
+                  <span className="text-xl font-bold text-gray-900">
                     AHMGAUDITO
                   </span>
-                  <span className="text-sm text-brand-teal-400 font-mono tracking-[0.2em] uppercase">
-                    Healthcare-AI Auditor
+                  <span className="text-xs text-gray-500 uppercase tracking-wide">
+                    Healthcare AI Auditor
                   </span>
                 </div>
               </div>
 
-              <div className="hidden lg:flex items-center space-x-2 ml-12">
+              <nav className="hidden md:flex items-center space-x-1">
                 <button
                   onClick={() => setActiveTab('scanner')}
-                  className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2 ${
                     activeTab === 'scanner'
-                      ? 'glass-3d text-white neon-purple'
-                      : 'text-white/70 hover:text-white hover:glass-3d'
+                      ? 'bg-brand-purple-100 text-brand-purple-700'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
-                  <Shield className="h-5 w-5" />
-                  <span>AI Scanner</span>
+                  <Shield className="h-4 w-4" />
+                  <span>Scanner</span>
                 </button>
                 <button
                   onClick={() => setActiveTab('pricing')}
-                  className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2 ${
                     activeTab === 'pricing'
-                      ? 'glass-3d text-white neon-gold'
-                      : 'text-white/70 hover:text-white hover:glass-3d'
+                      ? 'bg-brand-purple-100 text-brand-purple-700'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
-                  <DollarSign className="h-5 w-5" />
+                  <DollarSign className="h-4 w-4" />
                   <span>Pricing</span>
                 </button>
                 <button
                   onClick={() => setActiveTab('leads')}
-                  className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2 ${
                     activeTab === 'leads'
-                      ? 'glass-3d text-white neon-purple'
-                      : 'text-white/70 hover:text-white hover:glass-3d'
+                      ? 'bg-brand-purple-100 text-brand-purple-700'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
-                  <BarChart3 className="h-5 w-5" />
+                  <BarChart3 className="h-4 w-4" />
                   <span>Analytics</span>
                 </button>
-              </div>
+              </nav>
             </div>
 
-            <div className="flex items-center space-x-6">
-              <div className="hidden xl:flex items-center space-x-4">
-                <div className="glass-3d px-4 py-2 rounded-xl flex items-center space-x-2">
-                  <Users className="h-5 w-5 text-brand-teal-400" />
-                  <span className="text-white font-mono">2,347+</span>
-                  <span className="text-white/70 text-sm">scans</span>
+            <div className="flex items-center space-x-4">
+              <div className="hidden lg:flex items-center space-x-4 text-sm text-gray-600">
+                <div className="flex items-center space-x-1">
+                  <Users className="h-4 w-4" />
+                  <span>2,347+ scans</span>
                 </div>
-                <div className="glass-3d px-4 py-2 rounded-xl flex items-center space-x-2">
-                  <TrendingUp className="h-5 w-5 text-brand-gold-400" />
-                  <span className="text-white font-mono">$2.3M+</span>
-                  <span className="text-white/70 text-sm">saved</span>
+                <div className="flex items-center space-x-1">
+                  <TrendingUp className="h-4 w-4" />
+                  <span>$2.3M+ saved</span>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-3 glass-3d px-4 py-2 rounded-xl">
-                <div className="flex text-brand-gold-400">
+              <div className="flex items-center space-x-2">
+                <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current animate-3d-pulse" style={{animationDelay: `${i * 0.1}s`}} />
+                    <Star key={i} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <span className="text-white font-mono">4.9/5</span>
+                <span className="text-sm text-gray-600">4.9/5</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-7xl mx-auto px-6 py-12 relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Scanner Tab */}
         {activeTab === 'scanner' && (
-          <div className="perspective-container">
+          <div className="space-y-12">
             {/* Hero Section */}
-            <div className="text-center mb-16 py-20 relative">
-              {/* Floating 3D Elements */}
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-brand-purple-500/20 to-brand-gold-500/20 rounded-full blur-3xl animate-3d-float"></div>
-                <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-brand-teal-500/20 to-brand-purple-500/20 rounded-full blur-2xl animate-3d-float" style={{animationDelay: '2s'}}></div>
-                <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-gradient-to-r from-brand-gold-500/10 to-brand-teal-500/10 rounded-full blur-3xl animate-3d-float" style={{animationDelay: '4s'}}></div>
+            <section className="text-center py-16">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Stop HIPAA Violations Before They Cost You{' '}
+                <span className="text-red-600">$50,000+</span>
+              </h1>
+
+              <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+                AI-powered scanner detects PHI violations in your training data instantly.
+                Get compliant in minutes, not months with AHMGAUDITO's advanced healthcare AI auditor.
+              </p>
+
+              {/* Urgency Banner */}
+              <div className="alert alert-danger max-w-4xl mx-auto mb-8">
+                <div className="flex items-center justify-center">
+                  <AlertTriangle className="h-6 w-6 mr-3" />
+                  <p className="font-semibold">
+                    🚨 OCR investigations increased <span className="font-mono">400%</span> this year • Average fine: <span className="font-mono">$2.2M</span>
+                  </p>
+                </div>
               </div>
 
-              <div className="relative z-10">
-                <h1 className="text-7xl lg:text-8xl font-display font-black mb-8 leading-tight">
-                  <span className="block bg-gradient-to-r from-white via-brand-purple-200 to-white bg-clip-text text-transparent animate-hologram">
-                    Stop HIPAA Violations
-                  </span>
-                  <span className="block bg-gradient-to-r from-brand-gold-400 via-brand-purple-400 to-brand-teal-400 bg-clip-text text-transparent animate-3d-pulse">
-                    Before They Cost You
-                  </span>
-                  <span className="block text-6xl lg:text-7xl bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent neon-gold">
-                    $50,000+
-                  </span>
-                </h1>
-
-                <p className="text-2xl text-white/90 mb-12 max-w-5xl mx-auto leading-relaxed font-light">
-                  AI-powered scanner detects PHI violations in your training data instantly.
-                  Get compliant in minutes, not months with <span className="font-mono text-brand-teal-400">AHMGAUDITO's</span> advanced healthcare AI auditor.
-                </p>
-
-                {/* Urgency Banner */}
-                <div className="glass-3d border-l-4 border-red-400 p-8 mb-12 inline-block rounded-2xl neon-purple max-w-4xl">
-                  <div className="flex items-center justify-center">
-                    <AlertTriangle className="h-8 w-8 text-red-400 mr-4 animate-3d-pulse" />
-                    <p className="text-white font-bold text-xl">
-                      🚨 OCR investigations increased <span className="text-red-400 font-mono">400%</span> this year • Average fine: <span className="text-brand-gold-400 font-mono">$2.2M</span>
-                    </p>
+              {/* Testimonial */}
+              <div className="card-elevated max-w-4xl mx-auto mb-8 p-8">
+                <div className="flex items-center justify-center mb-6">
+                  <div className="flex text-yellow-400 mr-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-current" />
+                    ))}
                   </div>
+                  <span className="text-gray-600 font-medium">Trusted by 2,347+ Healthcare Organizations</span>
                 </div>
-
-                {/* Live testimonial rotation */}
-                <div className="glass-3d max-w-4xl mx-auto mb-12 p-8 rounded-3xl relative overflow-hidden">
-                  <div className="absolute inset-0 bg-hologram opacity-20"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-center mb-6">
-                      <div className="flex text-brand-gold-400 mr-4">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-6 w-6 fill-current animate-3d-pulse" style={{animationDelay: `${i * 0.2}s`}} />
-                        ))}
-                      </div>
-                      <span className="text-white/90 font-semibold text-lg">Trusted by <span className="font-mono text-brand-teal-400">2,347+</span> Healthcare Organizations</span>
-                    </div>
-                    <blockquote className="text-2xl text-white/95 mb-8 italic font-light leading-relaxed">
-                      "{testimonials[testimonialIndex].text}"
-                    </blockquote>
-                    <div className="text-center">
-                      <p className="font-bold text-brand-gold-400 text-xl">{testimonials[testimonialIndex].name}</p>
-                      <p className="text-white/80 text-lg">{testimonials[testimonialIndex].role}, {testimonials[testimonialIndex].company}</p>
-                    </div>
-                  </div>
+                <blockquote className="text-xl text-gray-700 mb-6 italic leading-relaxed">
+                  "{testimonials[testimonialIndex].text}"
+                </blockquote>
+                <div className="text-center">
+                  <p className="font-semibold text-gray-900">{testimonials[testimonialIndex].name}</p>
+                  <p className="text-gray-600">{testimonials[testimonialIndex].role}, {testimonials[testimonialIndex].company}</p>
                 </div>
-
-                {/* CTA Button */}
-                <button className="btn-3d-primary text-xl px-12 py-6 mb-8">
-                  <Zap className="h-6 w-6 mr-3" />
-                  Start Free AI Scan Now
-                </button>
-
-                <p className="text-white/60 text-lg">
-                  No credit card required • <span className="text-brand-teal-400">99.7%</span> accuracy • <span className="text-brand-gold-400">&lt;30s</span> results
-                </p>
               </div>
-            </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 mt-16">
+              {/* CTA Button */}
+              <button className="btn-primary btn-large mb-4">
+                <Zap className="h-5 w-5 mr-2" />
+                Start Free AI Scan Now
+              </button>
+
+              <p className="text-gray-500">
+                No credit card required • <span className="text-green-600 font-medium">99.7%</span> accuracy • <span className="text-blue-600 font-medium">&lt;30s</span> results
+              </p>
+            </section>
+
+            <section className="grid lg:grid-cols-2 gap-8">
               {/* Input Section */}
-              <div className="glass-3d p-8 rounded-3xl relative overflow-hidden animate-3d-float">
-                <div className="absolute inset-0 bg-hologram opacity-10"></div>
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-3xl font-display font-bold text-white flex items-center">
-                      <FileText className="mr-3 text-brand-teal-400 h-8 w-8" />
-                      Scan Your Data
-                    </h2>
-                    <div className="glass-3d px-4 py-2 rounded-xl neon-gold">
-                      <span className="text-brand-gold-400 font-bold font-mono">FREE SCAN</span>
-                    </div>
-                  </div>
+              <div className="card-elevated p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+                    <FileText className="mr-3 text-brand-purple-600 h-6 w-6" />
+                    Scan Your Data
+                  </h2>
+                  <span className="badge badge-success">FREE SCAN</span>
+                </div>
 
-                  {/* Sample Data with Risk Labels */}
-                  <div className="mb-8">
-                    <p className="text-white/80 mb-4 text-lg">Try with sample data:</p>
-                    <div className="space-y-3">
-                      {sampleTexts.map((sample, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setInputText(sample.text)}
-                          className={`w-full text-left p-4 rounded-2xl transition-all duration-300 border-2 glass-3d hover:scale-105 ${
-                            idx === 0 ? 'border-red-400/50 hover:border-red-400 hover:neon-purple' :
-                            idx === 1 ? 'border-yellow-400/50 hover:border-yellow-400 hover:neon-gold' :
-                            'border-green-400/50 hover:border-green-400 hover:neon-purple'
-                          }`}
-                        >
-                          <div className="flex items-center justify-between">
-                            <span className="font-semibold text-white text-lg">{sample.name}</span>
-                            <span className={`px-3 py-1 text-sm rounded-xl font-bold ${
-                              idx === 0 ? 'bg-red-500/20 text-red-400 border border-red-400/50' :
-                              idx === 1 ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-400/50' :
-                              'bg-green-500/20 text-green-400 border border-green-400/50'
-                            }`}>
-                              {idx === 0 ? 'HIGH RISK' : idx === 1 ? 'MEDIUM RISK' : 'COMPLIANT'}
-                            </span>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
+                {/* Sample Data with Risk Labels */}
+                <div className="mb-6">
+                  <p className="text-gray-600 mb-4">Try with sample data:</p>
+                  <div className="space-y-3">
+                    {sampleTexts.map((sample, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setInputText(sample.text)}
+                        className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 hover:shadow-md ${
+                          idx === 0 ? 'border-red-200 bg-red-50 hover:border-red-300' :
+                          idx === 1 ? 'border-yellow-200 bg-yellow-50 hover:border-yellow-300' :
+                          'border-green-200 bg-green-50 hover:border-green-300'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium text-gray-900">{sample.name}</span>
+                          <span className={`badge ${
+                            idx === 0 ? 'badge-danger' :
+                            idx === 1 ? 'badge-warning' :
+                            'badge-success'
+                          }`}>
+                            {idx === 0 ? 'HIGH RISK' : idx === 1 ? 'MEDIUM RISK' : 'COMPLIANT'}
+                          </span>
+                        </div>
+                      </button>
+                    ))}
                   </div>
+                </div>
 
-                  <div className="relative">
-                    <textarea
-                      value={inputText}
-                      onChange={(e) => setInputText(e.target.value)}
-                      placeholder="Paste your AI training data, patient records, clinical notes, or any healthcare text here...
+                <div className="relative mb-6">
+                  <textarea
+                    value={inputText}
+                    onChange={(e) => setInputText(e.target.value)}
+                    placeholder="Paste your AI training data, patient records, clinical notes, or any healthcare text here...
 
 Example data that triggers violations:
 • Patient names and contact info
@@ -503,68 +457,65 @@ Example data that triggers violations:
 • Medical record numbers
 • Insurance policy numbers
 • Addresses and phone numbers"
-                      className="w-full h-80 p-6 bg-black/20 border-2 border-brand-purple-400/30 rounded-2xl focus:border-brand-teal-400 focus:outline-none resize-none text-white placeholder-white/50 font-mono text-lg backdrop-blur-sm transition-all duration-300"
-                    />
-                    <div className="absolute top-4 right-4 glass-3d px-3 py-1 rounded-lg">
-                      <span className="text-brand-teal-400 font-mono text-sm">{inputText.length} chars</span>
-                    </div>
+                    className="input h-64 resize-none font-mono text-sm"
+                  />
+                  <div className="absolute top-3 right-3 bg-gray-100 px-2 py-1 rounded text-xs text-gray-500">
+                    {inputText.length} chars
                   </div>
+                </div>
 
-                  <div className="mt-8 flex items-center justify-between">
-                    <button
-                      onClick={analyzeText}
-                      disabled={!inputText.trim() || isAnalyzing}
-                      className={`btn-3d-primary text-xl px-10 py-4 ${!inputText.trim() || isAnalyzing ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    >
-                      {isAnalyzing ? (
-                        <>
-                          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-brand-purple-900 mr-3"></div>
-                          <span className="font-mono">ANALYZING...</span>
-                        </>
-                      ) : (
-                        <>
-                          <Zap className="mr-3 h-6 w-6" />
-                          <span className="font-bold">SCAN FOR VIOLATIONS</span>
-                        </>
-                      )}
-                    </button>
-                    <div className="text-right glass-3d px-4 py-2 rounded-xl">
-                      <p className="text-white/80 font-mono">Results in <span className="text-brand-gold-400">~30s</span></p>
-                      <p className="text-white/60 text-sm">99.7% accuracy</p>
-                    </div>
+                <div className="flex items-center justify-between">
+                  <button
+                    onClick={analyzeText}
+                    disabled={!inputText.trim() || isAnalyzing}
+                    className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isAnalyzing ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        Analyzing...
+                      </>
+                    ) : (
+                      <>
+                        <Zap className="mr-2 h-4 w-4" />
+                        Scan for Violations
+                      </>
+                    )}
+                  </button>
+                  <div className="text-right text-sm text-gray-500">
+                    <p>Results in ~30 seconds</p>
+                    <p>99.7% accuracy</p>
                   </div>
                 </div>
               </div>
 
               {/* Results Section */}
-              <div className="glass-3d p-8 rounded-3xl relative overflow-hidden animate-3d-float" style={{animationDelay: '1s'}}>
-                <div className="absolute inset-0 bg-hologram opacity-10"></div>
-                <div className="relative z-10">
-                  <h2 className="text-3xl font-display font-bold text-white mb-6 flex items-center">
-                    <CheckCircle className="mr-3 text-brand-teal-400 h-8 w-8 animate-3d-pulse" />
-                    Compliance Analysis
-                  </h2>
+              <div className="card-elevated p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <CheckCircle className="mr-3 text-green-600 h-6 w-6" />
+                  Compliance Analysis
+                </h2>
 
                 {!results && !isAnalyzing && (
                   <div className="text-center text-gray-500 py-16">
-                    <Shield className="mx-auto h-16 w-16 mb-4 opacity-30" />
-                    <p className="text-lg mb-2">Ready to scan your data</p>
+                    <Shield className="mx-auto h-16 w-16 mb-4 text-gray-300" />
+                    <p className="text-lg mb-2 text-gray-600">Ready to scan your data</p>
                     <p className="text-sm">Enter text and click "Scan" to identify HIPAA violations instantly</p>
                   </div>
                 )}
 
                 {isAnalyzing && (
                   <div className="text-center py-16">
-                    <div className="relative">
-                      <div className="animate-spin rounded-full h-16 w-16 border-4 border-brand-purple-200 border-t-brand-purple-600 mx-auto mb-4"></div>
+                    <div className="relative mb-4">
+                      <div className="animate-spin rounded-full h-16 w-16 border-4 border-gray-200 border-t-brand-purple-600 mx-auto"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <Shield className="h-8 w-8 text-brand-purple-600" />
                       </div>
                     </div>
-                    <p className="text-lg font-semibold mb-2">AI Analysis in Progress</p>
+                    <p className="text-lg font-semibold mb-2 text-gray-900">AI Analysis in Progress</p>
                     <p className="text-sm text-gray-600">Scanning for PHI patterns...</p>
-                    <div className="mt-4 bg-brand-purple-50 rounded-lg p-3">
-                      <p className="text-xs text-brand-purple-700">💡 Pro tip: Most healthcare startups have 3-7 hidden violations</p>
+                    <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-3 max-w-md mx-auto">
+                      <p className="text-sm text-blue-700">💡 Pro tip: Most healthcare startups have 3-7 hidden violations</p>
                     </div>
                   </div>
                 )}
