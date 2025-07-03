@@ -647,7 +647,7 @@ Example data that triggers violations:
                 )}
                 </div>
               </div>
-            </div>
+            </section>
 
             {/* Features Section */}
             <div className="mt-24 text-center relative">
